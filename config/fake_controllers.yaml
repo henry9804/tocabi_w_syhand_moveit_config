@@ -1,0 +1,121 @@
+controller_list:
+  - name: fake_whole_body_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - L_HipYaw_Joint
+      - L_HipRoll_Joint
+      - L_HipPitch_Joint
+      - L_Knee_Joint
+      - L_AnklePitch_Joint
+      - L_AnkleRoll_Joint
+      - R_HipYaw_Joint
+      - R_HipRoll_Joint
+      - R_HipPitch_Joint
+      - R_Knee_Joint
+      - R_AnklePitch_Joint
+      - R_AnkleRoll_Joint
+      - Waist1_Joint
+      - Waist2_Joint
+      - Upperbody_Joint
+      - L_Shoulder1_Joint
+      - L_Shoulder2_Joint
+      - L_Shoulder3_Joint
+      - L_Armlink_Joint
+      - L_Elbow_Joint
+      - L_Forearm_Joint
+      - L_Wrist1_Joint
+      - L_Wrist2_Joint
+      - Neck_Joint
+      - Head_Joint
+      - R_Shoulder1_Joint
+      - R_Shoulder2_Joint
+      - R_Shoulder3_Joint
+      - R_Armlink_Joint
+      - R_Elbow_Joint
+      - R_Forearm_Joint
+      - R_Wrist1_Joint
+      - R_Wrist2_Joint
+  - name: fake_left_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - L_Shoulder1_Joint
+      - L_Shoulder2_Joint
+      - L_Shoulder3_Joint
+      - L_Armlink_Joint
+      - L_Elbow_Joint
+      - L_Forearm_Joint
+      - L_Wrist1_Joint
+      - L_Wrist2_Joint
+  - name: fake_right_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - R_Shoulder1_Joint
+      - R_Shoulder2_Joint
+      - R_Shoulder3_Joint
+      - R_Armlink_Joint
+      - R_Elbow_Joint
+      - R_Forearm_Joint
+      - R_Wrist1_Joint
+      - R_Wrist2_Joint
+  - name: fake_upper_body_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Waist1_Joint
+      - Waist2_Joint
+      - Upperbody_Joint
+      - L_Shoulder1_Joint
+      - L_Shoulder2_Joint
+      - L_Shoulder3_Joint
+      - L_Armlink_Joint
+      - L_Elbow_Joint
+      - L_Forearm_Joint
+      - L_Wrist1_Joint
+      - L_Wrist2_Joint
+      - Neck_Joint
+      - Head_Joint
+      - R_Shoulder1_Joint
+      - R_Shoulder2_Joint
+      - R_Shoulder3_Joint
+      - R_Armlink_Joint
+      - R_Elbow_Joint
+      - R_Forearm_Joint
+      - R_Wrist1_Joint
+      - R_Wrist2_Joint
+  - name: fake_pelvis_pose_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - world_vjoint
+  - name: fake_right_hand_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - aa1
+      - act1
+      - mcp1
+      - pip1
+      - dip1
+      - aa2
+      - act2
+      - mcp2
+      - pip2
+      - dip2
+      - aa3
+      - act3
+      - mcp3
+      - pip3
+      - dip3
+      - aa4
+      - act4
+      - mcp4
+      - pip4
+      - dip4
+initial:  # Define initial robot poses per group
+  - group: whole_body
+    pose: initial
+  - group: left_arm
+    pose: initial_larm
+  - group: right_arm
+    pose: initial_rarm
+  - group: upper_body
+    pose: initial_upper
+  - group: right_hand
+    pose: hand_open

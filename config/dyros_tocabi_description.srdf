@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="dyros_tocabi_description">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="whole_body">
+        <joint name="L_HipYaw_Joint"/>
+        <joint name="L_HipRoll_Joint"/>
+        <joint name="L_HipPitch_Joint"/>
+        <joint name="L_Knee_Joint"/>
+        <joint name="L_AnklePitch_Joint"/>
+        <joint name="L_AnkleRoll_Joint"/>
+        <joint name="R_HipYaw_Joint"/>
+        <joint name="R_HipRoll_Joint"/>
+        <joint name="R_HipPitch_Joint"/>
+        <joint name="R_Knee_Joint"/>
+        <joint name="R_AnklePitch_Joint"/>
+        <joint name="R_AnkleRoll_Joint"/>
+        <joint name="Waist1_Joint"/>
+        <joint name="Waist2_Joint"/>
+        <joint name="Upperbody_Joint"/>
+        <joint name="L_Shoulder1_Joint"/>
+        <joint name="L_Shoulder2_Joint"/>
+        <joint name="L_Shoulder3_Joint"/>
+        <joint name="L_Armlink_Joint"/>
+        <joint name="L_Elbow_Joint"/>
+        <joint name="L_Forearm_Joint"/>
+        <joint name="L_Wrist1_Joint"/>
+        <joint name="L_Wrist2_Joint"/>
+        <joint name="Neck_Joint"/>
+        <joint name="Head_Joint"/>
+        <joint name="R_Shoulder1_Joint"/>
+        <joint name="R_Shoulder2_Joint"/>
+        <joint name="R_Shoulder3_Joint"/>
+        <joint name="R_Armlink_Joint"/>
+        <joint name="R_Elbow_Joint"/>
+        <joint name="R_Forearm_Joint"/>
+        <joint name="R_Wrist1_Joint"/>
+        <joint name="R_Wrist2_Joint"/>
+    </group>
+    <group name="left_arm">
+        <joint name="L_Shoulder1_Joint"/>
+        <joint name="L_Shoulder2_Joint"/>
+        <joint name="L_Shoulder3_Joint"/>
+        <joint name="L_Armlink_Joint"/>
+        <joint name="L_Elbow_Joint"/>
+        <joint name="L_Forearm_Joint"/>
+        <joint name="L_Wrist1_Joint"/>
+        <joint name="L_Wrist2_Joint"/>
+    </group>
+    <group name="right_arm">
+        <joint name="R_Shoulder1_Joint"/>
+        <joint name="R_Shoulder2_Joint"/>
+        <joint name="R_Shoulder3_Joint"/>
+        <joint name="R_Armlink_Joint"/>
+        <joint name="R_Elbow_Joint"/>
+        <joint name="R_Forearm_Joint"/>
+        <joint name="R_Wrist1_Joint"/>
+        <joint name="R_Wrist2_Joint"/>
+    </group>
+    <group name="upper_body">
+        <joint name="Waist1_Joint"/>
+        <joint name="Waist2_Joint"/>
+        <joint name="Upperbody_Joint"/>
+        <joint name="L_Shoulder1_Joint"/>
+        <joint name="L_Shoulder2_Joint"/>
+        <joint name="L_Shoulder3_Joint"/>
+        <joint name="L_Armlink_Joint"/>
+        <joint name="L_Elbow_Joint"/>
+        <joint name="L_Forearm_Joint"/>
+        <joint name="L_Wrist1_Joint"/>
+        <joint name="L_Wrist2_Joint"/>
+        <joint name="Neck_Joint"/>
+        <joint name="Head_Joint"/>
+        <joint name="R_Shoulder1_Joint"/>
+        <joint name="R_Shoulder2_Joint"/>
+        <joint name="R_Shoulder3_Joint"/>
+        <joint name="R_Armlink_Joint"/>
+        <joint name="R_Elbow_Joint"/>
+        <joint name="R_Forearm_Joint"/>
+        <joint name="R_Wrist1_Joint"/>
+        <joint name="R_Wrist2_Joint"/>
+    </group>
+    <group name="pelvis_pose">
+        <joint name="world_vjoint"/>
+    </group>
+    <group name="right_hand">
+        <joint name="aa1"/>
+        <joint name="act1"/>
+        <joint name="mcp1"/>
+        <joint name="pip1"/>
+        <joint name="dip1"/>
+        <joint name="aa2"/>
+        <joint name="act2"/>
+        <joint name="mcp2"/>
+        <joint name="pip2"/>
+        <joint name="dip2"/>
+        <joint name="aa3"/>
+        <joint name="act3"/>
+        <joint name="mcp3"/>
+        <joint name="pip3"/>
+        <joint name="dip3"/>
+        <joint name="aa4"/>
+        <joint name="act4"/>
+        <joint name="mcp4"/>
+        <joint name="pip4"/>
+        <joint name="dip4"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="initial" group="whole_body">
+        <joint name="Head_Joint" value="0"/>
+        <joint name="L_AnklePitch_Joint" value="-0.36"/>
+        <joint name="L_AnkleRoll_Joint" value="0"/>
+        <joint name="L_Armlink_Joint" value="-1.27"/>
+        <joint name="L_Elbow_Joint" value="-1"/>
+        <joint name="L_Forearm_Joint" value="0"/>
+        <joint name="L_HipPitch_Joint" value="-0.24"/>
+        <joint name="L_HipRoll_Joint" value="0"/>
+        <joint name="L_HipYaw_Joint" value="0"/>
+        <joint name="L_Knee_Joint" value="0.6"/>
+        <joint name="L_Shoulder1_Joint" value="0.3"/>
+        <joint name="L_Shoulder2_Joint" value="0.3"/>
+        <joint name="L_Shoulder3_Joint" value="1.5"/>
+        <joint name="L_Wrist1_Joint" value="-1"/>
+        <joint name="L_Wrist2_Joint" value="0"/>
+        <joint name="Neck_Joint" value="0"/>
+        <joint name="R_AnklePitch_Joint" value="-0.36"/>
+        <joint name="R_AnkleRoll_Joint" value="0"/>
+        <joint name="R_Armlink_Joint" value="1.27"/>
+        <joint name="R_Elbow_Joint" value="1"/>
+        <joint name="R_Forearm_Joint" value="0"/>
+        <joint name="R_HipPitch_Joint" value="-0.24"/>
+        <joint name="R_HipRoll_Joint" value="0"/>
+        <joint name="R_HipYaw_Joint" value="0"/>
+        <joint name="R_Knee_Joint" value="0.6"/>
+        <joint name="R_Shoulder1_Joint" value="-0.3"/>
+        <joint name="R_Shoulder2_Joint" value="-0.3"/>
+        <joint name="R_Shoulder3_Joint" value="-1.5"/>
+        <joint name="R_Wrist1_Joint" value="1"/>
+        <joint name="R_Wrist2_Joint" value="0"/>
+        <joint name="Upperbody_Joint" value="0"/>
+        <joint name="Waist1_Joint" value="0"/>
+        <joint name="Waist2_Joint" value="0"/>
+    </group_state>
+    <group_state name="initial_larm" group="left_arm">
+        <joint name="L_Armlink_Joint" value="-1.27"/>
+        <joint name="L_Elbow_Joint" value="-1"/>
+        <joint name="L_Forearm_Joint" value="0"/>
+        <joint name="L_Shoulder1_Joint" value="0.3"/>
+        <joint name="L_Shoulder2_Joint" value="0.3"/>
+        <joint name="L_Shoulder3_Joint" value="1.5"/>
+        <joint name="L_Wrist1_Joint" value="-1"/>
+        <joint name="L_Wrist2_Joint" value="0"/>
+    </group_state>
+    <group_state name="initial_rarm" group="right_arm">
+        <joint name="R_Armlink_Joint" value="1.27"/>
+        <joint name="R_Elbow_Joint" value="1"/>
+        <joint name="R_Forearm_Joint" value="0"/>
+        <joint name="R_Shoulder1_Joint" value="-0.3"/>
+        <joint name="R_Shoulder2_Joint" value="-0.3"/>
+        <joint name="R_Shoulder3_Joint" value="-1.5"/>
+        <joint name="R_Wrist1_Joint" value="1"/>
+        <joint name="R_Wrist2_Joint" value="0"/>
+    </group_state>
+    <group_state name="initial_upper" group="upper_body">
+        <joint name="Head_Joint" value="0"/>
+        <joint name="L_Armlink_Joint" value="-1.27"/>
+        <joint name="L_Elbow_Joint" value="-1"/>
+        <joint name="L_Forearm_Joint" value="0"/>
+        <joint name="L_Shoulder1_Joint" value="0.3"/>
+        <joint name="L_Shoulder2_Joint" value="0.3"/>
+        <joint name="L_Shoulder3_Joint" value="1.5"/>
+        <joint name="L_Wrist1_Joint" value="-1"/>
+        <joint name="L_Wrist2_Joint" value="0"/>
+        <joint name="Neck_Joint" value="0"/>
+        <joint name="R_Armlink_Joint" value="1.27"/>
+        <joint name="R_Elbow_Joint" value="1"/>
+        <joint name="R_Forearm_Joint" value="0"/>
+        <joint name="R_Shoulder1_Joint" value="-0.3"/>
+        <joint name="R_Shoulder2_Joint" value="-0.3"/>
+        <joint name="R_Shoulder3_Joint" value="-1.5"/>
+        <joint name="R_Wrist1_Joint" value="1"/>
+        <joint name="R_Wrist2_Joint" value="0"/>
+        <joint name="Upperbody_Joint" value="0"/>
+        <joint name="Waist1_Joint" value="0"/>
+        <joint name="Waist2_Joint" value="0"/>
+    </group_state>
+    <group_state name="hand_open" group="right_hand">
+        <joint name="aa1" value="0.8"/>
+        <joint name="aa2" value="0"/>
+        <joint name="aa3" value="0"/>
+        <joint name="aa4" value="0"/>
+        <joint name="act1" value="0.054974"/>
+        <joint name="act2" value="0.054974"/>
+        <joint name="act3" value="0.054974"/>
+        <joint name="act4" value="0.054974"/>
+        <joint name="dip1" value="0.151734"/>
+        <joint name="dip2" value="0.151734"/>
+        <joint name="dip3" value="0.151734"/>
+        <joint name="dip4" value="0.151734"/>
+        <joint name="mcp1" value="0.068718"/>
+        <joint name="mcp2" value="0.068718"/>
+        <joint name="mcp3" value="0.068718"/>
+        <joint name="mcp4" value="0.068718"/>
+        <joint name="pip1" value="0.008804"/>
+        <joint name="pip2" value="0.008804"/>
+        <joint name="pip3" value="0.008804"/>
+        <joint name="pip4" value="0.008804"/>
+    </group_state>
+    <group_state name="hand_close" group="right_hand">
+        <joint name="aa1" value="0.8"/>
+        <joint name="aa2" value="0"/>
+        <joint name="aa3" value="0"/>
+        <joint name="aa4" value="0"/>
+        <joint name="act1" value="0.664497"/>
+        <joint name="act2" value="0.664497"/>
+        <joint name="act3" value="0.664497"/>
+        <joint name="act4" value="0.664497"/>
+        <joint name="dip1" value="0.837867"/>
+        <joint name="dip2" value="0.837867"/>
+        <joint name="dip3" value="0.837867"/>
+        <joint name="dip4" value="0.837867"/>
+        <joint name="mcp1" value="0.830621"/>
+        <joint name="mcp2" value="0.830621"/>
+        <joint name="mcp3" value="0.830621"/>
+        <joint name="mcp4" value="0.830621"/>
+        <joint name="pip1" value="0.957324"/>
+        <joint name="pip2" value="0.957324"/>
+        <joint name="pip3" value="0.957324"/>
+        <joint name="pip4" value="0.957324"/>
+    </group_state>
+    <group_state name="ready" group="whole_body">
+        <joint name="Head_Joint" value="0.3"/>
+        <joint name="L_AnklePitch_Joint" value="-0.36"/>
+        <joint name="L_AnkleRoll_Joint" value="0"/>
+        <joint name="L_Armlink_Joint" value="-1.2"/>
+        <joint name="L_Elbow_Joint" value="-1.57"/>
+        <joint name="L_Forearm_Joint" value="1.5"/>
+        <joint name="L_HipPitch_Joint" value="-0.24"/>
+        <joint name="L_HipRoll_Joint" value="0"/>
+        <joint name="L_HipYaw_Joint" value="0"/>
+        <joint name="L_Knee_Joint" value="0.6"/>
+        <joint name="L_Shoulder1_Joint" value="0"/>
+        <joint name="L_Shoulder2_Joint" value="-0.3"/>
+        <joint name="L_Shoulder3_Joint" value="1.57"/>
+        <joint name="L_Wrist1_Joint" value="0.4"/>
+        <joint name="L_Wrist2_Joint" value="-0.2"/>
+        <joint name="Neck_Joint" value="0"/>
+        <joint name="R_AnklePitch_Joint" value="-0.36"/>
+        <joint name="R_AnkleRoll_Joint" value="0"/>
+        <joint name="R_Armlink_Joint" value="1.2"/>
+        <joint name="R_Elbow_Joint" value="1.57"/>
+        <joint name="R_Forearm_Joint" value="-1.5"/>
+        <joint name="R_HipPitch_Joint" value="-0.24"/>
+        <joint name="R_HipRoll_Joint" value="0"/>
+        <joint name="R_HipYaw_Joint" value="0"/>
+        <joint name="R_Knee_Joint" value="0.6"/>
+        <joint name="R_Shoulder1_Joint" value="0"/>
+        <joint name="R_Shoulder2_Joint" value="0.3"/>
+        <joint name="R_Shoulder3_Joint" value="-1.57"/>
+        <joint name="R_Wrist1_Joint" value="-0.4"/>
+        <joint name="R_Wrist2_Joint" value="0.2"/>
+        <joint name="Upperbody_Joint" value="0"/>
+        <joint name="Waist1_Joint" value="0"/>
+        <joint name="Waist2_Joint" value="0"/>
+    </group_state>
+    <group_state name="ready_larm" group="left_arm">
+        <joint name="L_Armlink_Joint" value="-1.2"/>
+        <joint name="L_Elbow_Joint" value="-1.57"/>
+        <joint name="L_Forearm_Joint" value="1.5"/>
+        <joint name="L_Shoulder1_Joint" value="0"/>
+        <joint name="L_Shoulder2_Joint" value="-0.3"/>
+        <joint name="L_Shoulder3_Joint" value="1.57"/>
+        <joint name="L_Wrist1_Joint" value="0.4"/>
+        <joint name="L_Wrist2_Joint" value="-0.2"/>
+    </group_state>
+    <group_state name="ready_rarm" group="right_arm">
+        <joint name="R_Armlink_Joint" value="1.2"/>
+        <joint name="R_Elbow_Joint" value="1.57"/>
+        <joint name="R_Forearm_Joint" value="-1.5"/>
+        <joint name="R_Shoulder1_Joint" value="0"/>
+        <joint name="R_Shoulder2_Joint" value="0.3"/>
+        <joint name="R_Shoulder3_Joint" value="-1.57"/>
+        <joint name="R_Wrist1_Joint" value="-0.4"/>
+        <joint name="R_Wrist2_Joint" value="0.2"/>
+    </group_state>
+    <group_state name="ready_upper" group="upper_body">
+        <joint name="Head_Joint" value="0.3"/>
+        <joint name="L_Armlink_Joint" value="-1.2"/>
+        <joint name="L_Elbow_Joint" value="-1.57"/>
+        <joint name="L_Forearm_Joint" value="1.5"/>
+        <joint name="L_Shoulder1_Joint" value="0"/>
+        <joint name="L_Shoulder2_Joint" value="-0.3"/>
+        <joint name="L_Shoulder3_Joint" value="1.57"/>
+        <joint name="L_Wrist1_Joint" value="0.4"/>
+        <joint name="L_Wrist2_Joint" value="-0.2"/>
+        <joint name="Neck_Joint" value="0"/>
+        <joint name="R_Armlink_Joint" value="1.2"/>
+        <joint name="R_Elbow_Joint" value="1.57"/>
+        <joint name="R_Forearm_Joint" value="-1.5"/>
+        <joint name="R_Shoulder1_Joint" value="0"/>
+        <joint name="R_Shoulder2_Joint" value="0.3"/>
+        <joint name="R_Shoulder3_Joint" value="-1.57"/>
+        <joint name="R_Wrist1_Joint" value="-0.4"/>
+        <joint name="R_Wrist2_Joint" value="0.2"/>
+        <joint name="Upperbody_Joint" value="0"/>
+        <joint name="Waist1_Joint" value="0"/>
+        <joint name="Waist2_Joint" value="0"/>
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="left_wrist" parent_link="L_Wrist2_Link" group="left_arm"/>
+    <end_effector name="right_hand" parent_link="palm" group="right_arm"/>
+    <end_effector name="rhand" parent_link="palm" group="upper_body"/>
+    <end_effector name="lwrist" parent_link="L_Wrist2_Link" group="upper_body"/>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="world_vjoint" type="floating" parent_frame="world" child_link="Pelvis_Virtual_Link"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="Head_Link" link2="L_HipCenter_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="L_HipRoll_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="L_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="L_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="L_Shoulder3_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="Neck_Link" reason="Adjacent"/>
+    <disable_collisions link1="Head_Link" link2="R_HipCenter_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="R_HipRoll_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="R_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="R_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="R_Shoulder3_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="Head_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="L_AnkleCenter_Link" link2="L_AnkleRoll_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_AnkleCenter_Link" link2="L_Foot_Link" reason="Never"/>
+    <disable_collisions link1="L_AnkleCenter_Link" link2="L_Knee_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_AnkleCenter_Link" link2="L_Thigh_Link" reason="Never"/>
+    <disable_collisions link1="L_AnkleRoll_Link" link2="L_Foot_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_Armlink_Link" link2="L_Elbow_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_Armlink_Link" link2="L_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="L_Armlink_Link" link2="L_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="L_Armlink_Link" link2="L_Shoulder3_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_Elbow_Link" link2="L_Forearm_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_Elbow_Link" link2="L_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="L_Elbow_Link" link2="L_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="L_Elbow_Link" link2="L_Shoulder3_Link" reason="Never"/>
+    <disable_collisions link1="L_Elbow_Link" link2="L_Wrist1_Link" reason="Never"/>
+    <disable_collisions link1="L_Elbow_Link" link2="L_Wrist2_Link" reason="Never"/>
+    <disable_collisions link1="L_Forearm_Link" link2="L_Wrist1_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_HipCenter_Link" link2="L_HipRoll_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_HipCenter_Link" link2="L_Thigh_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_HipCenter_Link" link2="Neck_Link" reason="Never"/>
+    <disable_collisions link1="L_HipCenter_Link" link2="Pelvis_Link" reason="Never"/>
+    <disable_collisions link1="L_HipCenter_Link" link2="R_HipCenter_Link" reason="Never"/>
+    <disable_collisions link1="L_HipCenter_Link" link2="R_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="L_HipCenter_Link" link2="R_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="L_HipCenter_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="L_HipCenter_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="L_HipRoll_Link" link2="Neck_Link" reason="Never"/>
+    <disable_collisions link1="L_HipRoll_Link" link2="Pelvis_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_HipRoll_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="L_HipRoll_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="L_Knee_Link" link2="L_Thigh_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_Shoulder1_Link" link2="L_Shoulder2_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_Shoulder1_Link" link2="L_Shoulder3_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder1_Link" link2="Neck_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder1_Link" link2="R_HipCenter_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder1_Link" link2="R_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder1_Link" link2="R_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder1_Link" link2="R_Shoulder3_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder1_Link" link2="Upperbody_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_Shoulder1_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder1_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="L_Shoulder3_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="Neck_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="R_HipCenter_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="R_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="R_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="R_Shoulder3_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="Upperbody_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="dp4_1" reason="Never"/>
+    <disable_collisions link1="L_Shoulder2_Link" link2="mcp2_1" reason="Never"/>
+    <disable_collisions link1="L_Shoulder3_Link" link2="Neck_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder3_Link" link2="R_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder3_Link" link2="R_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder3_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="L_Shoulder3_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="L_Wrist2_Link" reason="Adjacent"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="R_Wrist1_Link" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="act1_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="act2_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="act3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="act4_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="dp2_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="dp3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="dp4_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="mcp1_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="mcp2_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="mcp3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="mcp4_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="meta1_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="meta2_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="meta3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="mp2_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="mp3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="mp4_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="pp1_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="pp2_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist1_Link" link2="pp3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="R_Wrist1_Link" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="act3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="act4_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="dp2_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="dp3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="mcp2_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="mcp3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="mcp4_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="meta2_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="meta3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="mp3_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="pp1_1" reason="Never"/>
+    <disable_collisions link1="L_Wrist2_Link" link2="pp3_1" reason="Never"/>
+    <disable_collisions link1="Neck_Link" link2="Pelvis_Link" reason="Never"/>
+    <disable_collisions link1="Neck_Link" link2="R_HipCenter_Link" reason="Never"/>
+    <disable_collisions link1="Neck_Link" link2="R_HipRoll_Link" reason="Never"/>
+    <disable_collisions link1="Neck_Link" link2="R_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="Neck_Link" link2="R_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="Neck_Link" link2="R_Shoulder3_Link" reason="Never"/>
+    <disable_collisions link1="Neck_Link" link2="Upperbody_Link" reason="Adjacent"/>
+    <disable_collisions link1="Neck_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="Neck_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="Pelvis_Link" link2="R_HipCenter_Link" reason="Never"/>
+    <disable_collisions link1="Pelvis_Link" link2="R_HipRoll_Link" reason="Adjacent"/>
+    <disable_collisions link1="Pelvis_Link" link2="Waist1_Link" reason="Adjacent"/>
+    <disable_collisions link1="Pelvis_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="R_AnkleCenter_Link" link2="R_AnkleRoll_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_AnkleCenter_Link" link2="R_Foot_Link" reason="Never"/>
+    <disable_collisions link1="R_AnkleCenter_Link" link2="R_Knee_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_AnkleCenter_Link" link2="R_Thigh_Link" reason="Never"/>
+    <disable_collisions link1="R_AnkleRoll_Link" link2="R_Foot_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_Armlink_Link" link2="R_Elbow_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_Armlink_Link" link2="R_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="R_Armlink_Link" link2="R_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="R_Armlink_Link" link2="R_Shoulder3_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_Elbow_Link" link2="R_Forearm_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_Elbow_Link" link2="R_Shoulder1_Link" reason="Never"/>
+    <disable_collisions link1="R_Elbow_Link" link2="R_Shoulder2_Link" reason="Never"/>
+    <disable_collisions link1="R_Elbow_Link" link2="R_Shoulder3_Link" reason="Never"/>
+    <disable_collisions link1="R_Elbow_Link" link2="R_Wrist1_Link" reason="Never"/>
+    <disable_collisions link1="R_Elbow_Link" link2="R_Wrist2_Link" reason="Never"/>
+    <disable_collisions link1="R_Elbow_Link" link2="palm" reason="Never"/>
+    <disable_collisions link1="R_Forearm_Link" link2="R_Wrist1_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_Forearm_Link" link2="mcp2_1" reason="Never"/>
+    <disable_collisions link1="R_Forearm_Link" link2="mcp3_1" reason="Never"/>
+    <disable_collisions link1="R_HipCenter_Link" link2="R_HipRoll_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_HipCenter_Link" link2="R_Thigh_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_HipCenter_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="R_HipCenter_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="R_HipRoll_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="R_HipRoll_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="R_Knee_Link" link2="R_Thigh_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_Shoulder1_Link" link2="R_Shoulder2_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_Shoulder1_Link" link2="R_Shoulder3_Link" reason="Never"/>
+    <disable_collisions link1="R_Shoulder1_Link" link2="Upperbody_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_Shoulder1_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="R_Shoulder1_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="R_Shoulder2_Link" link2="R_Shoulder3_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_Shoulder2_Link" link2="Upperbody_Link" reason="Never"/>
+    <disable_collisions link1="R_Shoulder2_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="R_Shoulder2_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="R_Shoulder3_Link" link2="Waist1_Link" reason="Never"/>
+    <disable_collisions link1="R_Shoulder3_Link" link2="Waist2_Link" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="R_Wrist2_Link" reason="Adjacent"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="act1_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="act2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="act3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="act4_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="dp2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="dp3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="dp4_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="mcp1_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="mcp2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="mcp3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="mcp4_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="meta1_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="meta2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="meta3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="mp2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="mp3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="mp4_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="palm" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="pp1_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="pp2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="pp3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist1_Link" link2="pp4_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="act2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="act3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="act4_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="mcp1_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="mcp2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="mcp3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="mcp4_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="meta1_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="meta2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="meta3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="mp2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="mp3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="mp4_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="palm" reason="Adjacent"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="pp2_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="pp3_1" reason="Never"/>
+    <disable_collisions link1="R_Wrist2_Link" link2="pp4_1" reason="Never"/>
+    <disable_collisions link1="Upperbody_Link" link2="Waist2_Link" reason="Adjacent"/>
+    <disable_collisions link1="Waist1_Link" link2="Waist2_Link" reason="Adjacent"/>
+    <disable_collisions link1="act1_1" link2="mcp1_1" reason="Adjacent"/>
+    <disable_collisions link1="act1_1" link2="meta1_1" reason="Adjacent"/>
+    <disable_collisions link1="act1_1" link2="mcp4_1" reason="Never"/>
+    <disable_collisions link1="act2_1" link2="mcp2_1" reason="Adjacent"/>
+    <disable_collisions link1="act3_1" link2="mcp3_1" reason="Adjacent"/>
+    <disable_collisions link1="act4_1" link2="mcp4_1" reason="Adjacent"/>
+    <disable_collisions link1="dp1_1" link2="mp1_1" reason="Adjacent"/>
+    <disable_collisions link1="dp2_1" link2="mp2_1" reason="Adjacent"/>
+    <disable_collisions link1="dp3_1" link2="mp3_1" reason="Adjacent"/>
+    <disable_collisions link1="dp4_1" link2="mp4_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp1_1" link2="mcp2_1" reason="Never"/>
+    <disable_collisions link1="mcp1_1" link2="mcp3_1" reason="Never"/>
+    <disable_collisions link1="mcp1_1" link2="mcp4_1" reason="Never"/>
+    <disable_collisions link1="mcp1_1" link2="meta1_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp1_1" link2="meta3_1" reason="Never"/>
+    <disable_collisions link1="mcp1_1" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="mcp1_1" link2="pp1_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp2_1" link2="mcp4_1" reason="Never"/>
+    <disable_collisions link1="mcp2_1" link2="meta1_1" reason="Never"/>
+    <disable_collisions link1="mcp2_1" link2="meta2_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp2_1" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="mcp2_1" link2="palm" reason="Never"/>
+    <disable_collisions link1="mcp2_1" link2="pp2_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp3_1" link2="meta1_1" reason="Never"/>
+    <disable_collisions link1="mcp3_1" link2="meta3_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp3_1" link2="palm" reason="Never"/>
+    <disable_collisions link1="mcp3_1" link2="pp3_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp4_1" link2="meta1_1" reason="Never"/>
+    <disable_collisions link1="mcp4_1" link2="meta2_1" reason="Never"/>
+    <disable_collisions link1="mcp4_1" link2="meta4_1" reason="Adjacent"/>
+    <disable_collisions link1="mcp4_1" link2="palm" reason="Never"/>
+    <disable_collisions link1="mcp4_1" link2="pp4_1" reason="Adjacent"/>
+    <disable_collisions link1="meta1_1" link2="meta2_1" reason="Never"/>
+    <disable_collisions link1="meta1_1" link2="meta3_1" reason="Never"/>
+    <disable_collisions link1="meta1_1" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="meta1_1" link2="palm" reason="Adjacent"/>
+    <disable_collisions link1="meta2_1" link2="meta3_1" reason="Never"/>
+    <disable_collisions link1="meta2_1" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="meta2_1" link2="palm" reason="Adjacent"/>
+    <disable_collisions link1="meta3_1" link2="meta4_1" reason="Never"/>
+    <disable_collisions link1="meta3_1" link2="palm" reason="Adjacent"/>
+    <disable_collisions link1="meta4_1" link2="palm" reason="Adjacent"/>
+    <disable_collisions link1="mp1_1" link2="pp1_1" reason="Adjacent"/>
+    <disable_collisions link1="mp2_1" link2="pp2_1" reason="Adjacent"/>
+    <disable_collisions link1="mp3_1" link2="pp3_1" reason="Adjacent"/>
+    <disable_collisions link1="mp4_1" link2="pp4_1" reason="Adjacent"/>
+</robot>
