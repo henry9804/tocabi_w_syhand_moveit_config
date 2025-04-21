@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.1.3)
 project(tocabi_w_syhand_moveit_config)
 
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED
+  rospy
+)
 
 catkin_package()
 
