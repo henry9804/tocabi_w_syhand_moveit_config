@@ -1,0 +1,25 @@
+<launch>
+  <!-- By default, we are not in debug mode -->
+  <arg name="debug" default="false" />
+
+  <!-- By default, we will load or override the robot_description -->
+  <arg name="load_robot_description" default="true"/>
+
+  <!-- By default, hide joint_state_publisher's GUI in 'fake' controller_manager mode -->
+  <arg name="use_gui" default="false" />
+  <arg name="use_rviz" default="true" />
+
+  <!-- Run Rviz and load the default config to see the state of the move_group node -->
+  <include file="$(dirname)/moveit_rviz.launch" if="$(arg use_rviz)">
+    <arg name="rviz_config" value="$(dirname)/realrobot.rviz"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  <!-- load URDF, SRDF and joint_limits configuration -->
+  <include file="$(dirname)/planning_context.launch">
+    <arg name="load_robot_description" value="$(arg load_robot_description)" />
+  </include>
+
+  <node pkg="tocabi_w_syhand_moveit_config" name="realrobot_visualization" type="realrobot_visualization.py" output="screen"/>
+
+</launch>

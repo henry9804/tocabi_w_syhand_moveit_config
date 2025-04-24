@@ -1,0 +1,872 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 84
+    Name: Displays
+    Property Tree Widget:
+      Expanded: ~
+      Splitter Ratio: 0.5
+    Tree Height: 613
+  - Class: rviz/Help
+    Name: Help
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+Preferences:
+  PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Acceleration_Scaling_Factor: 0.1
+      Class: moveit_rviz_plugin/MotionPlanning
+      Enabled: false
+      Move Group Namespace: ""
+      MoveIt_Allow_Approximate_IK: false
+      MoveIt_Allow_External_Program: false
+      MoveIt_Allow_Replanning: false
+      MoveIt_Allow_Sensor_Positioning: false
+      MoveIt_Planning_Attempts: 10
+      MoveIt_Planning_Time: 5
+      MoveIt_Use_Cartesian_Path: false
+      MoveIt_Use_Constraint_Aware_IK: false
+      MoveIt_Workspace:
+        Center:
+          X: 0
+          Y: 0
+          Z: 0
+        Size:
+          X: 2
+          Y: 2
+          Z: 2
+      Name: MotionPlanning
+      Planned Path:
+        Color Enabled: false
+        Interrupt Display: false
+        Links:
+          All Links Enabled: true
+          Expand Joint Details: false
+          Expand Link Details: false
+          Expand Tree: false
+          Link Tree Style: Links in Alphabetic Order
+        Loop Animation: true
+        Robot Alpha: 0.5
+        Robot Color: 150; 50; 150
+        Show Robot Collision: false
+        Show Robot Visual: true
+        Show Trail: false
+        State Display Time: 0.05 s
+        Trail Step Size: 1
+        Trajectory Topic: move_group/display_planned_path
+        Use Sim Time: false
+      Planning Metrics:
+        Payload: 1
+        Show Joint Torques: false
+        Show Manipulability: false
+        Show Manipulability Index: false
+        Show Weight Limit: false
+        TextHeight: 0.07999999821186066
+      Planning Request:
+        Colliding Link Color: 255; 0; 0
+        Goal State Alpha: 1
+        Goal State Color: 250; 128; 0
+        Interactive Marker Size: 0
+        Joint Violation Color: 255; 0; 255
+        Planning Group: left_arm
+        Query Goal State: true
+        Query Start State: false
+        Show Workspace: false
+        Start State Alpha: 1
+        Start State Color: 0; 255; 0
+      Planning Scene Topic: move_group/monitored_planning_scene
+      Robot Description: robot_description
+      Scene Geometry:
+        Scene Alpha: 1
+        Scene Color: 50; 230; 50
+        Scene Display Time: 0.009999999776482582
+        Show Scene Geometry: true
+        Voxel Coloring: Z-Axis
+        Voxel Rendering: Occupied Voxels
+      Scene Robot:
+        Attached Body Color: 150; 50; 150
+        Links:
+          All Links Enabled: true
+          Expand Joint Details: false
+          Expand Link Details: false
+          Expand Tree: false
+          Link Tree Style: Links in Alphabetic Order
+        Robot Alpha: 0.5
+        Show Robot Collision: false
+        Show Robot Visual: true
+      Value: false
+      Velocity_Scaling_Factor: 0.1
+    - Attached Body Color: 150; 50; 150
+      Class: moveit_rviz_plugin/RobotState
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Head_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_AnkleCenter_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_AnkleRoll_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Armlink_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Elbow_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Foot_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Forearm_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HipCenter_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HipRoll_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Knee_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Shoulder1_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Shoulder2_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Shoulder3_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Thigh_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Wrist1_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Wrist2_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Link Tree Style: Links in Alphabetic Order
+        Neck_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Pelvis_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Pelvis_Virtual_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        R_AnkleCenter_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_AnkleRoll_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Armlink_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Elbow_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Foot_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Forearm_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_HipCenter_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_HipRoll_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Knee_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Shoulder1_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Shoulder2_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Shoulder3_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Thigh_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Wrist1_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Wrist2_Link:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
+          Value: true
+        Upperbody_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Waist1_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Waist2_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        act1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        act2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        act3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        act4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        dp1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        dp2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        dp3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        dp4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mcp1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mcp2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mcp3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mcp4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meta1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meta2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meta3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meta4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mp1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mp2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mp3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mp4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        palm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pp1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pp2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pp3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pp4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotState
+      Robot Alpha: 1
+      Robot Description: robot_description
+      Robot State Topic: current_state
+      Show All Links: true
+      Show Highlights: true
+      Value: true
+      Visual Enabled: true
+    - Attached Body Color: 150; 50; 150
+      Class: moveit_rviz_plugin/RobotState
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Head_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_AnkleCenter_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_AnkleRoll_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Armlink_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Elbow_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Foot_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Forearm_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HipCenter_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_HipRoll_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Knee_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Shoulder1_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Shoulder2_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Shoulder3_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Thigh_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Wrist1_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        L_Wrist2_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Link Tree Style: Links in Alphabetic Order
+        Neck_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Pelvis_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Pelvis_Virtual_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        R_AnkleCenter_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_AnkleRoll_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Armlink_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Elbow_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Foot_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Forearm_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_HipCenter_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_HipRoll_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Knee_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Shoulder1_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Shoulder2_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Shoulder3_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Thigh_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Wrist1_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        R_Wrist2_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Upperbody_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Waist1_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Waist2_Link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        act1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        act2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        act3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        act4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        dp1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        dp2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        dp3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        dp4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mcp1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mcp2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mcp3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mcp4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meta1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meta2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meta3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        meta4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mp1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mp2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mp3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mp4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        palm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pp1_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pp2_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pp3_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pp4_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotState
+      Robot Alpha: 0.5
+      Robot Description: robot_description
+      Robot State Topic: target_state
+      Show All Links: true
+      Show Highlights: true
+      Value: true
+      Visual Enabled: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /cam_LEFT/image_raw
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: compressed
+      Unreliable: false
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /cam_RIGHT/image_raw
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: compressed
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Axes Length: 0.10000000149011612
+      Axes Radius: 0.009999999776482582
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.30000001192092896
+      Head Radius: 0.10000000149011612
+      Name: Pose
+      Queue Size: 10
+      Shaft Length: 1
+      Shaft Radius: 0.05000000074505806
+      Shape: Axes
+      Topic: /tocabi/act/pose_target
+      Unreliable: false
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Default Light: true
+    Fixed Frame: world
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 3.4739279747009277
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Field of View: 0.75
+      Focal Point:
+        X: -0.20932896435260773
+        Y: 0.31343820691108704
+        Z: 0.5302774906158447
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.465000182390213
+      Target Frame: world
+      Yaw: 5.734947681427002
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 848
+  Help:
+    collapsed: false
+  Hide Left Dock: false
+  Hide Right Dock: false
+  Image:
+    collapsed: false
+  MotionPlanning:
+    collapsed: false
+  MotionPlanning - Trajectory Slider:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000200000000000001a3000002f6fc0200000007fb000000100044006900730070006c006100790073010000003d000002f6000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a00560069006500770073000000010c000000a4000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006700000001ab000001880000017d00ffffff0000000100000235000002f6fc0200000002fb0000000a0049006d006100670065010000003d000001780000001600fffffffb0000000a0049006d00610067006501000001bb000001780000001600ffffff00000250000002f600000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Views:
+    collapsed: false
+  Width: 1588
+  X: 227
+  Y: 27
