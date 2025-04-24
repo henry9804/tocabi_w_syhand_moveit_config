@@ -288,35 +288,6 @@ upper_body:
     - BITstar
   projection_evaluator: joints(Waist1_Joint,Waist2_Joint)
   longest_valid_segment_fraction: 0.005
-pelvis_pose:
-  planner_configs:
-    - AnytimePathShortening
-    - SBL
-    - EST
-    - LBKPIECE
-    - BKPIECE
-    - KPIECE
-    - RRT
-    - RRTConnect
-    - RRTstar
-    - TRRT
-    - PRM
-    - PRMstar
-    - FMT
-    - BFMT
-    - PDST
-    - STRIDE
-    - BiTRRT
-    - LBTRRT
-    - BiEST
-    - ProjEST
-    - LazyPRM
-    - LazyPRMstar
-    - SPARS
-    - SPARStwo
-    - AITstar
-    - ABITstar
-    - BITstar
 right_hand:
   planner_configs:
     - AnytimePathShortening

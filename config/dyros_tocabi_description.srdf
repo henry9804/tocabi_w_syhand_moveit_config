@@ -63,6 +63,7 @@
         <joint name="R_Forearm_Joint"/>
         <joint name="R_Wrist1_Joint"/>
         <joint name="R_Wrist2_Joint"/>
+        <joint name="R_Wrist_2_Hand_Joint"/>
     </group>
     <group name="upper_body">
         <joint name="Waist1_Joint"/>
@@ -86,9 +87,6 @@
         <joint name="R_Forearm_Joint"/>
         <joint name="R_Wrist1_Joint"/>
         <joint name="R_Wrist2_Joint"/>
-    </group>
-    <group name="pelvis_pose">
-        <joint name="world_vjoint"/>
     </group>
     <group name="right_hand">
         <joint name="aa1"/>
@@ -316,7 +314,7 @@
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="left_wrist" parent_link="L_Wrist2_Link" group="left_arm"/>
     <end_effector name="right_hand" parent_link="palm" group="right_arm"/>
-    <end_effector name="rhand" parent_link="palm" group="upper_body"/>
+    <end_effector name="rhand" parent_link="R_Wrist2_Link" group="upper_body"/>
     <end_effector name="lwrist" parent_link="L_Wrist2_Link" group="upper_body"/>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_vjoint" type="floating" parent_frame="world" child_link="Pelvis_Virtual_Link"/>

@@ -81,10 +81,6 @@ controller_list:
       - R_Forearm_Joint
       - R_Wrist1_Joint
       - R_Wrist2_Joint
-  - name: fake_pelvis_pose_controller
-    type: $(arg fake_execution_type)
-    joints:
-      - world_vjoint
   - name: fake_right_hand_controller
     type: $(arg fake_execution_type)
     joints:
