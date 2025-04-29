@@ -41,10 +41,10 @@ class TocabiStateVisualizer:
         pelvis_quat = Rotation.from_euler('xyz', [pelvis_rpy.x, pelvis_rpy.y, pelvis_rpy.z]).as_quat()
 
         q_body = joint_msg.position
-        if self.hand_state == 0:
-            q_hand = hand_open
-        elif self.hand_state == 1:
+        if self.hand_state:
             q_hand = hand_close
+        else:
+            q_hand = hand_open
         
         self.robot_state.joint_state.header.stamp = rospy.Time.now()
         self.robot_state.joint_state.name = [*joint_msg.name, *hand_name]
@@ -58,10 +58,10 @@ class TocabiStateVisualizer:
         self.robot_state_pub.publish(self.robot_state_msg)
 
     def joint_action_callback(self, joint_msg):
-        if self.hand_state == 0:
-            q_hand = hand_open
-        elif self.hand_state == 1:
+        if self.hand_state:
             q_hand = hand_close
+        else:
+            q_hand = hand_open
             
         target_state_msg = DisplayRobotState()
         target_state = target_state_msg.state
@@ -71,7 +71,7 @@ class TocabiStateVisualizer:
         target_state.joint_state.name = [*joint_msg.name, *hand_name]
         target_state.joint_state.position = [*joint_msg.position, *q_hand]
 
-        self.target_state_pub.publish(self.robot_state_msg)
+        self.target_state_pub.publish(target_state_msg)
 
     def hand_action_callback(self, hand_msg):
         self.hand_state = hand_msg.data
