@@ -5,9 +5,9 @@ import numpy as np
 import rospy
 from std_msgs.msg import Bool
 from sensor_msgs.msg import JointState
-from tocabi_msgs.msg import positionCommand
+from tocabi_msgs.msg import TaskCommand
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QVBoxLayout, QHBoxLayout, QPushButton, QWidget, QLabel
+from PyQt5.QtWidgets import QApplication, QVBoxLayout, QHBoxLayout, QPushButton, QWidget, QLabel, QComboBox
 from functools import partial
 from utils import JOINT_NAMES, INIT_POSE, READY_POSE, cubic
 
@@ -21,9 +21,15 @@ class ROSPublisherApp(QWidget):
         self.current_joint_vel = None
 
         self.joint_target_pub = rospy.Publisher("/tocabi/act/joint_target", JointState, queue_size=10)
-        self.position_command_pub = rospy.Publisher("/tocabi/positioncommand", positionCommand, queue_size=10)
+        self.taskcommand_pub = rospy.Publisher("/tocabi/taskcommand", TaskCommand, queue_size=10)
         self.hand_publisher = rospy.Publisher('/tocabi_hand/on', Bool, queue_size=10)
         self.act_publisher = rospy.Publisher('/tocabi/act/terminate', Bool, queue_size=10)
+
+        self.mode = 6  # Default mode
+        self.taskcommand_msg = TaskCommand()
+        self.taskcommand_msg.left_foot = True
+        self.taskcommand_msg.right_foot = True
+        self.taskcommand_msg.time = 1.0
 
         rospy.init_node('pyqt_ros_publisher', anonymous=True)
 
@@ -89,6 +95,13 @@ class ROSPublisherApp(QWidget):
 
         act_layout.addSpacing(10)
 
+        self.dropdown = QComboBox()
+        self.dropdown.addItems(["mode 6: Joint", "mode 7: CLIK", "mode 8: QP", "mode 9: HQP OSF"])
+        self.dropdown.currentIndexChanged.connect(self.dropdown_changed)
+        act_layout.addWidget(self.dropdown)
+
+        act_layout.addSpacing(10)
+
         start_button = QPushButton("Start")
         start_button.clicked.connect(partial(self.publish_act_msg, False))
         act_layout.addWidget(start_button)
@@ -105,7 +118,10 @@ class ROSPublisherApp(QWidget):
         self.setLayout(layout)
 
     def tocabi_joint_traj(self, target, duration):
-        # ver 1. publish JointState message
+        self.taskcommand_msg.mode = 8
+        self.taskcommand_pub.publish(self.taskcommand_msg)
+        rospy.sleep(0.1)
+        
         start = time.time()
         init_pos = np.array(self.current_joint_pos)
         init_vel = np.array(self.current_joint_vel)
@@ -119,25 +135,30 @@ class ROSPublisherApp(QWidget):
             self.joint_target_pub.publish(target_joint_msg)
             rospy.sleep(0.1)
 
-        # ver 2. publish positionCommand message
-        # position_command_msg = positionCommand()
-        # position_command_msg.position = target
-        # position_command_msg.traj_time = duration
-        # position_command_msg.gravity = True
-        # position_command_msg.relative = False
-        # self.position_command_pub.publish(position_command_msg)
-
     def publish_hand_msg(self, data):
         msg = Bool()
         msg.data = data
         self.hand_publisher.publish(msg)
         print(f"Hand On: {msg.data}")
 
+    def dropdown_changed(self, index):
+        self.mode = index + 6
+        option = self.dropdown.itemText(index)
+        print(f"control mode for ACT changed to: {option}")
+
     def publish_act_msg(self, data):
+        if not data:
+            self.taskcommand_msg.mode = self.mode
+            self.taskcommand_pub.publish(self.taskcommand_msg)
+            rospy.sleep(1.0)
+            print(f"ACT Start!")
+        else:
+            print(f"ACT End!")
+
         msg = Bool()
         msg.data = data
         self.act_publisher.publish(msg)
-        print(f"ACT Terminate: {msg.data}")
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
